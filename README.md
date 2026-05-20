@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔧 Repair Widget
 
 A multi-step device repair booking widget built with React + Vite.
@@ -87,3 +88,6 @@ export async function fetchBrands(deviceId) {
 - Vite 5
 - Pure inline styles + CSS variables (no CSS framework needed)
 - Google Fonts: Syne (display) + DM Sans (body)
+=======
+# Repair-Quote-Widget
+>>>>>>> e5cc3010e3427a6defe575e595ac36b998587284
