@@ -1,0 +1,143 @@
+/* ─── global.css ─────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── DARK theme (default) ─────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --color-bg: #09090e;
+  --color-surface: #111118;
+  --color-surface-hover: #16161f;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-active: #00e5ff;
+  --color-accent: #00e5ff;
+  --color-accent-dim: rgba(0, 229, 255, 0.12);
+  --color-accent-glow: rgba(0, 229, 255, 0.35);
+  --color-text: #e4e4f0;
+  --color-text-muted: #555568;
+  --color-text-sub: #88889a;
+  --color-success: #00e5a0;
+  --color-error: #ff4d6d;
+  --color-card: rgba(255, 255, 255, 0.03);
+  --color-card-selected: rgba(0, 229, 255, 0.07);
+  --color-tag: rgba(255, 255, 255, 0.06);
+  --color-input-bg: rgba(255, 255, 255, 0.04);
+  --color-input-border: rgba(255, 255, 255, 0.1);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.45);
+  --shadow-selected: 0 0 0 1.5px #00e5ff, 0 6px 28px rgba(0, 229, 255, 0.2);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-hover: rgba(255, 255, 255, 0.2);
+  --step-done-text: #000;
+}
+
+/* ── LIGHT theme ─────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --color-bg: #f0f2f7;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f5f7fc;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-active: #0099cc;
+  --color-accent: #0099cc;
+  --color-accent-dim: rgba(0, 153, 204, 0.1);
+  --color-accent-glow: rgba(0, 153, 204, 0.3);
+  --color-text: #111118;
+  --color-text-muted: #999ab0;
+  --color-text-sub: #666680;
+  --color-success: #00a870;
+  --color-error: #e03050;
+  --color-card: rgba(0, 0, 0, 0.025);
+  --color-card-selected: rgba(0, 153, 204, 0.07);
+  --color-tag: rgba(0, 0, 0, 0.05);
+  --color-input-bg: rgba(0, 0, 0, 0.03);
+  --color-input-border: rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-selected: 0 0 0 1.5px #0099cc, 0 6px 24px rgba(0, 153, 204, 0.18);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.12);
+  --scrollbar-hover: rgba(0, 0, 0, 0.22);
+  --step-done-text: #fff;
+}
+
+/* ── Font vars ───────────────────────────────────────────────────────────── */
+:root {
+  --font-display: "Roboto", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+input,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.35s ease both;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px var(--color-accent-dim);
+  }
+  50% {
+    box-shadow: 0 0 28px var(--color-accent-glow);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
